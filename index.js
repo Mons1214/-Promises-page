@@ -1,8 +1,10 @@
 const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 3000;
-const path = require("path")
+const path = require("path");
+const cors = require('cors')
 
+app.use(cors());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -31,6 +33,14 @@ app.get('/ruta3', (req, res) => {
     res.sendFile(path.join(__dirname, 'public',  'ruta3', 'ruta3.html'));
 });
 
+
+app.get('/api/hola', (req, res) => {
+    const respuesta = {
+        mensaje: 'Hey, aqui esta la fecha actual',
+        fecha: new Date().toLocaleString(),
+    };
+    res.json(respuesta);
+});
 
 app.listen(PORT, () => {
     console.log('Servidor corriendo en http://localhost:3000');
