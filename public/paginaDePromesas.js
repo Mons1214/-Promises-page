@@ -11,7 +11,8 @@ document.getElementById('fecha').addEventListener('click', () => {
     });
 });
 
-// Botón para ir a /ruta1
-document.getElementById('boton').addEventListener('click', () => {
+
+// Botón para ir a /ruta3
+document.getElementById('nextRoute').addEventListener('click', () => {
   window.location.href = '/ruta1';
 });

@@ -42,6 +42,28 @@ app.get('/api/hola', (req, res) => {
     res.json(respuesta);
 });
 
+app.get('/api/promesa1', (req, res) => {
+    res.json({
+    mensaje: 'Promesa 1 hecha',
+    dato: 'Este es un dato desde /api/promesa1'
+    });
+});
+
+app.get('/api/promesa2', (req, res) => {
+    res.json({
+        mensaje: 'Promesa 2 hecha',
+        valor: 42
+    });
+});
+
+app.get('/api/promesa3', (req, res) => {
+    const respuesta = {
+        mensaje: 'Hey, aqui esta la fecha actual',
+        fecha: new Date().toLocaleString(),
+    };
+    res.json(respuesta);
+});
+
 app.listen(PORT, () => {
     console.log('Servidor corriendo en http://localhost:3000');
 });
